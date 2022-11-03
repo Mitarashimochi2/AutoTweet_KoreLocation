@@ -9,14 +9,14 @@ import tweepy
 import time
 
 # To set your enviornment variables in your terminal run the following line:
-# export 'BEARER_TOKEN'='<your_bearer_token>'
-bearer_token = "AAAAAAAAAAAAAAAAAAAAAOvDcQEAAAAAOdTKOCLdlS81j07JhIN5ojMYt0c%3DQLWouFX8xZ614kcTtwjRSgCGjZtJIrw3smcNVs8cG7Pu2g5run"
+
+bearer_token = "YOUR BEARER_TOKEN"
 
 # 認証に必要なキーとトークン
-API_KEY = 'hFrFfBqCJ2SDqkx4nBvn8nYiP'
-API_SECRET = 'oDttfZzNWCo6lWC0QZRxc1eUEPMIIJOh4NhjR5rTdMD0Ma105i'
-ACCESS_TOKEN = '1261838378254741504-aAKNG5PJ8ES2jL9sD2NR1zcPXyPP4n'
-ACCESS_TOKEN_SECRET = 'NUOexTKxiyUX4csKeeNJw6C40L5XAGJzfafAKNUny7XW0'
+API_KEY = ''
+API_SECRET = ''
+ACCESS_TOKEN = ''
+ACCESS_TOKEN_SECRET = ''
 
 # APIの認証
 auth = tweepy.OAuthHandler(API_KEY, API_SECRET)
