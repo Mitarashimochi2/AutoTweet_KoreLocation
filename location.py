@@ -9,14 +9,14 @@ import tweepy
 import time
 
 # To set your enviornment variables in your terminal run the following line:
-
-bearer_token = "YOUR BEARER_TOKEN"
+# export 'BEARER_TOKEN'='<your_bearer_token>'
+bearer_token = "TOKEN"
 
 # 認証に必要なキーとトークン
-API_KEY = ''
-API_SECRET = ''
-ACCESS_TOKEN = ''
-ACCESS_TOKEN_SECRET = ''
+API_KEY = 'TOKEN'
+API_SECRET = 'TOKEN'
+ACCESS_TOKEN = 'TOKEN'
+ACCESS_TOKEN_SECRET = 'TOKEN'
 
 # APIの認証
 auth = tweepy.OAuthHandler(API_KEY, API_SECRET)
@@ -66,7 +66,7 @@ def write():
     json_response = connect_to_endpoint(url)
 
     #開く
-    f = open("location.txt", "a")
+    f = open("/Volumes/SSD250/VScode/ALL/location/location.txt", "a")
     #書き込み
     f.write( "\n" + json_response["data"][0]["location"])
     f.close()
@@ -81,7 +81,7 @@ class main:
     #読み込む関数
     def __init__(self):
         #最新の行だけ開いて読む
-        with open('location.txt', "r") as f:
+        with open('/Volumes/SSD250/VScode/ALL/location/location.txt', "r") as f:
             for line in f:
                 pass
             self.last = line
@@ -104,7 +104,42 @@ class main:
         self.__init__()
         if kore_now != self.last:
             #ツイート
-            api.update_status("😷位置情報が更新されました😷 \n " + " \nコレコレ\n「" + kore_now + "」 \n" + " \n更新前は \n「" + self.last + "」でした \n" + " \n#コレコレ")
+            if "つべら" in kore_now and "キャス" in kore_now:
+                api.update_status_with_media(status="😷位置情報が更新されました😷 \n " + " \nコレコレ\n「" + kore_now + "」 \n" + " \n更新前は \n「" + self.last + "」でした \n" + " \n#コレコレ" , filename='/Volumes/SSD250/VScode/ALL/location/castube.jpeg')
+
+            elif "つべら" in kore_now and "ツイキャス" in kore_now:
+                api.update_status_with_media(status="😷位置情報が更新されました😷 \n " + " \nコレコレ\n「" + kore_now + "」 \n" + " \n更新前は \n「" + self.last + "」でした \n" + " \n#コレコレ" , filename='/Volumes/SSD250/VScode/ALL/location/castube.jpeg')
+
+            elif "YouTube" in kore_now and "キャス" in kore_now:
+                api.update_status_with_media(status="😷位置情報が更新されました😷 \n " + " \nコレコレ\n「" + kore_now + "」 \n" + " \n更新前は \n「" + self.last + "」でした \n" + " \n#コレコレ" , filename='/Volumes/SSD250/VScode/ALL/location/castube.jpeg')
+
+            elif "YouTube" in kore_now and "ツイキャス" in kore_now:
+                api.update_status_with_media(status="😷位置情報が更新されました😷 \n " + " \nコレコレ\n「" + kore_now + "」 \n" + " \n更新前は \n「" + self.last + "」でした \n" + " \n#コレコレ" , filename='/Volumes/SSD250/VScode/ALL/location/castube.jpeg')
+
+            elif "ニコ生" in kore_now and "ツイキャス" in kore_now:
+                api.update_status_with_media(status="😷位置情報が更新されました😷 \n " + " \nコレコレ\n「" + kore_now + "」 \n" + " \n更新前は \n「" + self.last + "」でした \n" + " \n#コレコレ" , filename='/Volumes/SSD250/VScode/ALL/location/nicocas.jpeg')
+
+            elif "ニコ生" in kore_now and "キャス" in kore_now:
+                api.update_status_with_media(status="😷位置情報が更新されました😷 \n " + " \nコレコレ\n「" + kore_now + "」 \n" + " \n更新前は \n「" + self.last + "」でした \n" + " \n#コレコレ" , filename='/Volumes/SSD250/VScode/ALL/location/nicocas.jpeg')
+
+            elif "ニコ生" in kore_now and "YouTube" in kore_now:
+                api.update_status_with_media(status="😷位置情報が更新されました😷 \n " + " \nコレコレ\n「" + kore_now + "」 \n" + " \n更新前は \n「" + self.last + "」でした \n" + " \n#コレコレ" , filename='/Volumes/SSD250/VScode/ALL/location/nicotube.jpeg')
+
+            elif "ニコ生" in kore_now and "つべら" in kore_now:
+                api.update_status_with_media(status="😷位置情報が更新されました😷 \n " + " \nコレコレ\n「" + kore_now + "」 \n" + " \n更新前は \n「" + self.last + "」でした \n" + " \n#コレコレ" , filename='/Volumes/SSD250/VScode/ALL/location/nicotube.jpeg')
+
+            elif "つべら" in kore_now or "YouTube" in kore_now:
+                api.update_status_with_media(status="😷位置情報が更新されました😷 \n " + " \nコレコレ\n「" + kore_now + "」 \n" + " \n更新前は \n「" + self.last + "」でした \n" + " \n#コレコレ" , filename='/Volumes/SSD250/VScode/ALL/location/tube.jpeg')
+
+            elif "キャス" in kore_now or "ツイキャス" in kore_now:
+                api.update_status_with_media(status="😷位置情報が更新されました😷 \n " + " \nコレコレ\n「" + kore_now + "」 \n" + " \n更新前は \n「" + self.last + "」でした \n" + " \n#コレコレ" , filename='/Volumes/SSD250/VScode/ALL/location/cas.jpeg')
+
+            elif "ニコ生" in kore_now or "ニコニコ" in kore_now:
+                api.update_status_with_media(status="😷位置情報が更新されました😷 \n " + " \nコレコレ\n「" + kore_now + "」 \n" + " \n更新前は \n「" + self.last + "」でした \n" + " \n#コレコレ" , filename='/Volumes/SSD250/VScode/ALL/location/nico.jpeg')
+            else:
+                api.update_status("😷位置情報が更新されました😷 \n " + " \nコレコレ\n「" + kore_now + "」 \n" + " \n更新前は \n「" + self.last + "」でした \n" + " \n#コレコレ")
+
+            
             write()
             print("【一致しなかったのでツイートされました】")
             print("位置情報:" + kore_now + "リストの最後:" + self.last)
@@ -127,9 +162,4 @@ schedule.every(1).minutes.do(out.get)
 
 while True:
     schedule.run_pending()
-    time.sleep(5)
-
-
-
-
-
+    time.sleep(60)
