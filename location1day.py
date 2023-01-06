@@ -3,7 +3,7 @@ import time
 
 while True:
     # プロジェクトを再実行する
-    subprocess.run(["python", "/Volumes/SSD250/VScode/ALL/location/location.py"])
+    subprocess.run(["python", "location.pyへのパスを入れる"])
 
     # 1日待機する（24時間 * 60分 * 60秒）
     time.sleep(12 * 60 * 60)
